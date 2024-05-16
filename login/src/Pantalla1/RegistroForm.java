@@ -8,21 +8,38 @@
  */
 package Pantalla1;
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 import java.awt.Color;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import DatosGN.Datos_usuario;
+<<<<<<< Updated upstream
+=======
+import DatosGN.Usuario;
+import Milogica.DetallesUsuarioController;
+import Milogica.UsuarioController;
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+>>>>>>> Stashed changes
 
 /**
  *
  * @author Taller
  */
 public class RegistroForm extends javax.swing.JFrame {
+
     int xMouse, yMouse;
+    private Point mPoint;
+
     public RegistroForm() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -43,11 +60,15 @@ public class RegistroForm extends javax.swing.JFrame {
         CONTRASEÑA = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         CONTRASEÑA1 = new javax.swing.JPasswordField();
+<<<<<<< Updated upstream
         jTextField1 = new javax.swing.JTextField();
+=======
+>>>>>>> Stashed changes
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         usuario1 = new javax.swing.JLabel();
+<<<<<<< Updated upstream
         jTextField2 = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         usuario3 = new javax.swing.JLabel();
@@ -62,12 +83,31 @@ public class RegistroForm extends javax.swing.JFrame {
         usuario6 = new javax.swing.JLabel();
         telefon = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
+=======
+        Nombre = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        usuario3 = new javax.swing.JLabel();
+        Ap_paterno = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        usuario4 = new javax.swing.JLabel();
+        Correo = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        usuario5 = new javax.swing.JLabel();
+        Ap_materno = new javax.swing.JTextField();
+        jSeparator8 = new javax.swing.JSeparator();
+        telefono = new javax.swing.JTextField();
+>>>>>>> Stashed changes
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         usuario7 = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
+<<<<<<< Updated upstream
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+=======
+        usuario8 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+>>>>>>> Stashed changes
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -78,9 +118,26 @@ public class RegistroForm extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
+<<<<<<< Updated upstream
         bg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bg.setFocusable(false);
         bg.setForeground(new java.awt.Color(204, 204, 204));
+=======
+        bg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bg.setForeground(new java.awt.Color(204, 204, 204));
+        bg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bg.setFocusable(false);
+        bg.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                bgMouseDragged(evt);
+            }
+        });
+        bg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bgMousePressed(evt);
+            }
+        });
+>>>>>>> Stashed changes
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         inisio.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
@@ -90,11 +147,19 @@ public class RegistroForm extends javax.swing.JFrame {
         bg.add(inisio, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
 
         usuario.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+<<<<<<< Updated upstream
         usuario.setText("ID_Usuario");
         bg.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 250, 10));
+=======
+        usuario.setText("Detalles de Usuario");
+        bg.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 204));
+        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 250, 10));
+>>>>>>> Stashed changes
 
         CONTRASEÑA.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         CONTRASEÑA.setText("Contraseña");
@@ -104,13 +169,35 @@ public class RegistroForm extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 250, -1));
 
+<<<<<<< Updated upstream
+=======
+        CONTRASEÑA1.setForeground(new java.awt.Color(204, 204, 204));
+>>>>>>> Stashed changes
         CONTRASEÑA1.setText("******");
         CONTRASEÑA1.setBorder(null);
         CONTRASEÑA1.setCaretColor(new java.awt.Color(204, 204, 204));
         CONTRASEÑA1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         CONTRASEÑA1.setDisabledTextColor(new java.awt.Color(204, 204, 204));
+<<<<<<< Updated upstream
         CONTRASEÑA1.setForeground(new java.awt.Color(204, 204, 204));
         CONTRASEÑA1.addMouseListener(new java.awt.event.MouseAdapter() {
+=======
+        CONTRASEÑA1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                CONTRASEÑA1MousePressed(evt);
+            }
+        });
+        bg.add(CONTRASEÑA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 190, 10));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+>>>>>>> Stashed changes
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 CONTRASEÑA1MousePressed(evt);
             }
@@ -140,11 +227,19 @@ public class RegistroForm extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< Updated upstream
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("X");
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+=======
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("X");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+>>>>>>> Stashed changes
         jLabel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jLabel2MouseDragged(evt);
@@ -165,14 +260,22 @@ public class RegistroForm extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< Updated upstream
                 .addGap(0, 748, Short.MAX_VALUE))
+=======
+                .addGap(0, 316, Short.MAX_VALUE))
+>>>>>>> Stashed changes
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+<<<<<<< Updated upstream
         bg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 30));
+=======
+        bg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 30));
+>>>>>>> Stashed changes
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pantalla1/Imagenes/Imagen de WhatsApp 2024-04-02 a las 12.21.20_9c6b1ea1.jpg"))); // NOI18N
         bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
@@ -181,6 +284,7 @@ public class RegistroForm extends javax.swing.JFrame {
         usuario1.setText("Nombre");
         bg.add(usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
+<<<<<<< Updated upstream
         jTextField2.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(204, 204, 204));
         jTextField2.setText("Ingrese su Nombre");
@@ -206,6 +310,33 @@ public class RegistroForm extends javax.swing.JFrame {
             }
         });
         bg.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 240, -1));
+=======
+        Nombre.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        Nombre.setForeground(new java.awt.Color(204, 204, 204));
+        Nombre.setText("Ingrese su nombre");
+        Nombre.setBorder(null);
+        Nombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                NombreFocusGained(evt);
+            }
+        });
+        Nombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                NombreMousePressed(evt);
+            }
+        });
+        Nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreActionPerformed(evt);
+            }
+        });
+        Nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NombreKeyPressed(evt);
+            }
+        });
+        bg.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 240, -1));
+>>>>>>> Stashed changes
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 250, 10));
@@ -214,6 +345,7 @@ public class RegistroForm extends javax.swing.JFrame {
         usuario3.setText("Apellido Paterno");
         bg.add(usuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
+<<<<<<< Updated upstream
         jTextField4.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setText("Ingrese su Apellido Paterno");
@@ -234,6 +366,33 @@ public class RegistroForm extends javax.swing.JFrame {
             }
         });
         bg.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 240, -1));
+=======
+        Ap_paterno.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        Ap_paterno.setForeground(new java.awt.Color(204, 204, 204));
+        Ap_paterno.setText("Ingrese su apellido paterno");
+        Ap_paterno.setBorder(null);
+        Ap_paterno.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Ap_paternoFocusGained(evt);
+            }
+        });
+        Ap_paterno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Ap_paternoMousePressed(evt);
+            }
+        });
+        Ap_paterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ap_paternoActionPerformed(evt);
+            }
+        });
+        Ap_paterno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Ap_paternoKeyPressed(evt);
+            }
+        });
+        bg.add(Ap_paterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 240, -1));
+>>>>>>> Stashed changes
 
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 250, 10));
@@ -242,6 +401,7 @@ public class RegistroForm extends javax.swing.JFrame {
         usuario4.setText("Correo");
         bg.add(usuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
+<<<<<<< Updated upstream
         jTextField5.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         jTextField5.setForeground(new java.awt.Color(204, 204, 204));
         jTextField5.setText("Ingrese su Correo");
@@ -262,6 +422,28 @@ public class RegistroForm extends javax.swing.JFrame {
             }
         });
         bg.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 240, -1));
+=======
+        Correo.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        Correo.setForeground(new java.awt.Color(204, 204, 204));
+        Correo.setText("Ingrese su Correo");
+        Correo.setBorder(null);
+        Correo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                CorreoFocusGained(evt);
+            }
+        });
+        Correo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                CorreoMousePressed(evt);
+            }
+        });
+        Correo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                CorreoKeyPressed(evt);
+            }
+        });
+        bg.add(Correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 240, -1));
+>>>>>>> Stashed changes
 
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 250, 10));
@@ -270,6 +452,7 @@ public class RegistroForm extends javax.swing.JFrame {
         usuario5.setText("Apellido Materno");
         bg.add(usuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
+<<<<<<< Updated upstream
         jTextField6.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         jTextField6.setForeground(new java.awt.Color(204, 204, 204));
         jTextField6.setText("Ingrese su apellido paterno");
@@ -290,10 +473,38 @@ public class RegistroForm extends javax.swing.JFrame {
             }
         });
         bg.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 240, -1));
+=======
+        Ap_materno.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        Ap_materno.setForeground(new java.awt.Color(204, 204, 204));
+        Ap_materno.setText("Ingrese su apellido materno");
+        Ap_materno.setBorder(null);
+        Ap_materno.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Ap_maternoFocusGained(evt);
+            }
+        });
+        Ap_materno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Ap_maternoMousePressed(evt);
+            }
+        });
+        Ap_materno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ap_maternoActionPerformed(evt);
+            }
+        });
+        Ap_materno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Ap_maternoKeyPressed(evt);
+            }
+        });
+        bg.add(Ap_materno, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 240, -1));
+>>>>>>> Stashed changes
 
         jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 250, 10));
 
+<<<<<<< Updated upstream
         usuario6.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         usuario6.setText("Telefono");
         bg.add(usuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
@@ -328,6 +539,40 @@ public class RegistroForm extends javax.swing.JFrame {
         jLabel4.setText("REGISTRAR");
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+=======
+        telefono.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        telefono.setForeground(new java.awt.Color(204, 204, 204));
+        telefono.setText("Ingrese su número de teléfono");
+        telefono.setBorder(null);
+        telefono.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                telefonoFocusGained(evt);
+            }
+        });
+        telefono.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                telefonoMousePressed(evt);
+            }
+        });
+        telefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                telefonoActionPerformed(evt);
+            }
+        });
+        telefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                telefonoKeyPressed(evt);
+            }
+        });
+        bg.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 240, -1));
+
+        jPanel2.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("REGISTRAR");
+>>>>>>> Stashed changes
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -341,13 +586,18 @@ public class RegistroForm extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< Updated upstream
             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+=======
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+>>>>>>> Stashed changes
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
+<<<<<<< Updated upstream
         bg.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, -1, 40));
 
         usuario7.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -378,14 +628,36 @@ public class RegistroForm extends javax.swing.JFrame {
             }
         });
         bg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, -1, -1));
+=======
+        bg.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, -1, 40));
+
+        usuario7.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        usuario7.setText("Teléfono");
+        bg.add(usuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
+
+        jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
+        bg.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 250, 10));
+
+        usuario8.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        usuario8.setText("Telefono");
+        bg.add(usuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
+
+        jSeparator11.setForeground(new java.awt.Color(0, 0, 0));
+        bg.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 250, 10));
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+<<<<<<< Updated upstream
                 .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(710, 710, 710)
+=======
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(745, 745, 745)
+>>>>>>> Stashed changes
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -400,11 +672,16 @@ public class RegistroForm extends javax.swing.JFrame {
                 .addGap(0, 1, Short.MAX_VALUE))
         );
 
+<<<<<<< Updated upstream
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 530));
+=======
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 530));
+>>>>>>> Stashed changes
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< Updated upstream
     private void jTextField5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField5MousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5MousePressed
@@ -422,6 +699,36 @@ public class RegistroForm extends javax.swing.JFrame {
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse,y - yMouse);
+=======
+    private void CorreoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CorreoMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CorreoMousePressed
+
+    private void Ap_paternoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ap_paternoMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Ap_paternoMousePressed
+
+    private void NombreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreMousePressed
+
+
+    }//GEN-LAST:event_NombreMousePressed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+// TODO add your handling code here:
+        int CurrentX = this.getLocation().x;
+        int CurrentY = this.getLocation().y;
+        // Obtener el movimiento del del JFrame  en X, Y
+        int MoveX = (CurrentX + evt.getX()) - (CurrentX + mPoint.x);
+        int MoveY = (CurrentY + evt.getY()) - (CurrentY + mPoint.y);
+
+        // Calcular las nuevas posisiones 
+        int x = CurrentX + MoveX;
+        int y = CurrentY + MoveY;
+
+        // Asignar las posisiones al JFrame para generar el movimiento
+        this.setLocation(x, y);
+
+>>>>>>> Stashed changes
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
@@ -438,6 +745,7 @@ public class RegistroForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel2MouseDragged
 
+<<<<<<< Updated upstream
     private void jTextField1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MousePressed
         if (jTextField1.getText().isEmpty()) {
             jTextField1.setText("Ingrese su nombre de usuario");
@@ -449,6 +757,8 @@ public class RegistroForm extends javax.swing.JFrame {
         CONTRASEÑA1.setForeground(Color.GRAY);
     }//GEN-LAST:event_jTextField1MousePressed
 
+=======
+>>>>>>> Stashed changes
     private void CONTRASEÑA1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONTRASEÑA1MousePressed
         if (CONTRASEÑA1.getText().isEmpty()) {
             CONTRASEÑA1.setText("Ingrese su contraseña");
@@ -459,6 +769,7 @@ public class RegistroForm extends javax.swing.JFrame {
         CONTRASEÑA1.setForeground(Color.BLACK);
     }//GEN-LAST:event_CONTRASEÑA1MousePressed
 
+<<<<<<< Updated upstream
     private void jTextField6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField6MousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6MousePressed
@@ -603,6 +914,190 @@ public class RegistroForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error al agregar la semilla");
         }
     }//GEN-LAST:event_jLabel4MousePressed
+=======
+    private void Ap_maternoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ap_maternoMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Ap_maternoMousePressed
+
+    private void telefonoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_telefonoMousePressed
+
+
+    }//GEN-LAST:event_telefonoMousePressed
+
+    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreActionPerformed
+
+    private void NombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NombreFocusGained
+        Nombre.setText("");
+        Nombre.setForeground(Color.BLACK);
+    }//GEN-LAST:event_NombreFocusGained
+
+    private void NombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NombreKeyPressed
+        // Obtener el código de la tecla presionada
+        int key = evt.getKeyCode();
+
+        // Verificar si se presionó la tecla Enter (código 10)
+        if (key == java.awt.event.KeyEvent.VK_ENTER) {
+            // Pasar al siguiente campo de texto
+            Nombre.requestFocus();
+        }
+    }//GEN-LAST:event_NombreKeyPressed
+
+    private void Ap_paternoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Ap_paternoKeyPressed
+        // Obtener el código de la tecla presionada
+        int key = evt.getKeyCode();
+
+        // Verificar si se presionó la tecla Enter (código 10)
+        if (key == java.awt.event.KeyEvent.VK_ENTER) {
+            // Pasar al siguiente campo de texto
+            Ap_paterno.requestFocus();
+        }
+    }//GEN-LAST:event_Ap_paternoKeyPressed
+
+    private void Ap_paternoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Ap_paternoFocusGained
+        Ap_paterno.setText("");
+        Ap_paterno.setForeground(Color.BLACK);
+    }//GEN-LAST:event_Ap_paternoFocusGained
+
+    private void Ap_maternoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Ap_maternoKeyPressed
+        // Obtener el código de la tecla presionada
+        int key = evt.getKeyCode();
+
+        // Verificar si se presionó la tecla Enter (código 10)
+        if (key == java.awt.event.KeyEvent.VK_ENTER) {
+            // Pasar al siguiente campo de texto
+            Ap_materno.requestFocus();
+        }
+    }//GEN-LAST:event_Ap_maternoKeyPressed
+
+    private void Ap_maternoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Ap_maternoFocusGained
+        Ap_materno.setText("");
+        Ap_materno.setForeground(Color.BLACK);
+    }//GEN-LAST:event_Ap_maternoFocusGained
+
+    private void CorreoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CorreoFocusGained
+        Correo.setText("");
+        Correo.setForeground(Color.BLACK);
+    }//GEN-LAST:event_CorreoFocusGained
+
+    private void CorreoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CorreoKeyPressed
+        // Obtener el código de la tecla presionada
+        int key = evt.getKeyCode();
+
+        // Verificar si se presionó la tecla Enter (código 10)
+        if (key == java.awt.event.KeyEvent.VK_ENTER) {
+            // Pasar al siguiente campo de texto
+            Correo.requestFocus();
+        }
+    }//GEN-LAST:event_CorreoKeyPressed
+
+    private void telefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefonoFocusGained
+        telefono.setText("");
+        telefono.setForeground(Color.BLACK);
+    }//GEN-LAST:event_telefonoFocusGained
+
+    private void telefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefonoKeyPressed
+        // Obtener el código de la tecla presionada
+        int key = evt.getKeyCode();
+
+        // Verificar si se presionó la tecla Enter (código 10)
+        if (key == java.awt.event.KeyEvent.VK_ENTER) {
+            // Pasar al siguiente campo de texto
+            telefono.requestFocus();
+        }
+    }//GEN-LAST:event_telefonoKeyPressed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+
+        if ((!Nombre.getText().isEmpty() && !Nombre.getText().equals("Ingrese su nombre"))
+                && (!Ap_paterno.getText().isEmpty() && !Ap_paterno.getText().equals("Ingrese su apellido paterno"))
+                && (!Ap_materno.getText().isEmpty() && !Ap_materno.getText().equals("Ingrese su apellido materno"))
+                && (!Correo.getText().isEmpty() && !Correo.getText().equals("Ingrese su correo electrónico"))
+                && (!telefono.getText().isEmpty() && !telefono.getText().equals("Ingrese su número de teléfono"))) {
+
+            Pattern pattern = Pattern.compile("^\\d{10}$");
+            // Verificar si el número de teléfono tiene exactamente 10 dígitos y son todos numéricos
+            Matcher matcher = pattern.matcher(telefono.getText());
+            if (matcher.matches()) {
+                DetallesUsuarioController mControllerDetalles = new DetallesUsuarioController();
+                Datos_usuario mDetalles = new Datos_usuario();
+
+                mDetalles.setNombre(Nombre.getText());
+                mDetalles.setAp_paterno(Ap_paterno.getText());
+                mDetalles.setAp_materno(Ap_materno.getText());
+                mDetalles.setCorreo(Correo.getText());
+                mDetalles.setTelefono(telefono.getText());
+                int idNuevo = mControllerDetalles.Agregar(mDetalles);
+
+                if (idNuevo > 0) {
+                    JOptionPane.showMessageDialog(null, "Usuario agregado correctamente");
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al guardar los datos del usuario");
+                }
+
+                this.dispose();
+
+                CrearContrasenia nuevaInterfaz = new CrearContrasenia();
+                nuevaInterfaz.setidGenerado(idNuevo);
+                nuevaInterfaz.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Número de teléfono inválido");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Verifica que todos los campos estén llenados correctamente");
+
+        }
+
+
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
+
+    }//GEN-LAST:event_jLabel4MousePressed
+
+    private void telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_telefonoActionPerformed
+
+    private void bgMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgMousePressed
+
+        // TODO add your handling code here:
+        mPoint = evt.getPoint(); // Obtener el pundo de partida del movimiento
+        getComponentAt(mPoint);
+    }//GEN-LAST:event_bgMousePressed
+
+    private void bgMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgMouseDragged
+
+        // TODO add your handling code here:
+        int CurrentX = this.getLocation().x;
+        int CurrentY = this.getLocation().y;
+        // Obtener el movimiento del del JFrame  en X, Y
+        int MoveX = (CurrentX + evt.getX()) - (CurrentX + mPoint.x);
+        int MoveY = (CurrentY + evt.getY()) - (CurrentY + mPoint.y);
+
+        // Calcular las nuevas posisiones 
+        int x = CurrentX + MoveX;
+        int y = CurrentY + MoveY;
+
+        // Asignar las posisiones al JFrame para generar el movimiento
+        this.setLocation(x, y);
+    }//GEN-LAST:event_bgMouseDragged
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        mPoint = evt.getPoint(); // Obtener el pundo de partida del movimiento
+        getComponentAt(mPoint);    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void Ap_maternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ap_maternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Ap_maternoActionPerformed
+
+    private void Ap_paternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ap_paternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Ap_paternoActionPerformed
+>>>>>>> Stashed changes
 
     /**
      * @param args the command line arguments
@@ -640,11 +1135,22 @@ public class RegistroForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< Updated upstream
     private javax.swing.JLabel CONTRASEÑA;
     private javax.swing.JPasswordField CONTRASEÑA1;
     private javax.swing.JPanel bg;
     private javax.swing.JLabel inisio;
     private javax.swing.JButton jButton1;
+=======
+    private javax.swing.JTextField Ap_materno;
+    private javax.swing.JTextField Ap_paterno;
+    private javax.swing.JLabel CONTRASEÑA;
+    private javax.swing.JPasswordField CONTRASEÑA1;
+    private javax.swing.JTextField Correo;
+    private javax.swing.JTextField Nombre;
+    private javax.swing.JPanel bg;
+    private javax.swing.JLabel inisio;
+>>>>>>> Stashed changes
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -652,14 +1158,20 @@ public class RegistroForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
+<<<<<<< Updated upstream
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator10;
+=======
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+>>>>>>> Stashed changes
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+<<<<<<< Updated upstream
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -667,12 +1179,20 @@ public class RegistroForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField telefon;
+=======
+    private javax.swing.JTextField telefono;
+>>>>>>> Stashed changes
     private javax.swing.JLabel usuario;
     private javax.swing.JLabel usuario1;
     private javax.swing.JLabel usuario3;
     private javax.swing.JLabel usuario4;
     private javax.swing.JLabel usuario5;
+<<<<<<< Updated upstream
     private javax.swing.JLabel usuario6;
     private javax.swing.JLabel usuario7;
+=======
+    private javax.swing.JLabel usuario7;
+    private javax.swing.JLabel usuario8;
+>>>>>>> Stashed changes
     // End of variables declaration//GEN-END:variables
 }

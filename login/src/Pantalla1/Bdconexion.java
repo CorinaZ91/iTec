@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package Pantalla1;
+<<<<<<< Updated upstream
+=======
+import Conexion.ConfigBD;
+>>>>>>> Stashed changes
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -13,6 +17,7 @@ import javax.swing.JOptionPane;
  *
  * @author Taller
  */
+<<<<<<< Updated upstream
 public class Bdconexion {
     Connection conectar=null;
     public Connection conectar(){
@@ -25,5 +30,69 @@ public class Bdconexion {
             }
             return conectar;
         }
+=======
+@SuppressWarnings("empty-statement")
+public class Bdconexion {
+    private Connection conexion;
+    private Statement comando;
+    
+    
+    Connection conectar=null;
+    public boolean conectar(){
+            try {
+            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
+            this.conexion = DriverManager.getConnection("jdbc:mysql://" + ConfigBD.Servidor + "/" + ConfigBD.BaseDatos,
+                    ConfigBD.Usuario, ConfigBD.Contrasenna);
+            this.comando = conexion.createStatement();
+            return true;
+        } catch (Exception error) {
+            System.out.println("Error " + error.toString());
+            return false;
+        }
+    }
+
+    public Connection getConexion() {
+        return conexion;
+    }
+    
+    
+  
+    public int ejecutarActualizacion(String SQL) throws SQLException {
+        try {
+            int FilasAfectadas;
+            FilasAfectadas = this.comando.executeUpdate(SQL);
+            System.out.println(SQL + " Ejecutada");
+            return FilasAfectadas;
+        } catch (Exception error) {
+            System.out.println("Error " + error.toString());
+            return -1;
+        }
+    }
+    public ResultSet ejecutarConsulta(String SQL) {
+        try {
+            ResultSet resultado = this.comando.executeQuery(SQL);
+            System.out.println(SQL + " Ejecutada");
+            return resultado;
+        } catch (Exception error) {
+            System.out.println("Error " + error.toString());
+            return null;
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+>>>>>>> Stashed changes
     
 }

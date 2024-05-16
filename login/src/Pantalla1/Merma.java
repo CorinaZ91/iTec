@@ -5,7 +5,12 @@
  */
 package Pantalla1;
 
+import DatosGN.Usuario;
+import DatosGN.merma;
+import Milogica.MermaController;
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,7 +36,7 @@ public class Merma extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        CantidadMerma = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,16 +51,16 @@ public class Merma extends javax.swing.JFrame {
         jLabel1.setText("MERMA");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField1.setText("Ingrese Cantidad de Merma");
-        jTextField1.setBorder(null);
-        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        CantidadMerma.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        CantidadMerma.setForeground(new java.awt.Color(204, 204, 204));
+        CantidadMerma.setText("Ingrese Cantidad de Merma");
+        CantidadMerma.setBorder(null);
+        CantidadMerma.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTextField1MousePressed(evt);
+                CantidadMermaMousePressed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 170, 20));
+        jPanel1.add(CantidadMerma, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 170, 20));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Aceptar");
@@ -89,20 +94,37 @@ public class Merma extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
+        
+        merma mermaActualizar = new merma();
+        mermaActualizar.setId_merma(1);
+        
+        String cantidadTexto = CantidadMerma.getText();
+        int cantidad = Integer.parseInt(cantidadTexto);
+        
+        mermaActualizar.setCantidad(cantidad);
+
+        MermaController mermaController = new MermaController();
+        boolean actualizacionExitosa = mermaController.Actualizar(mermaActualizar);
+        if (actualizacionExitosa) {
+            JOptionPane.showMessageDialog(null, "La merma se actualizó correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo actualizar la merma.");
+        }
+
+        this.dispose();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-         Pantalla2 nuevaInterfaz = new Pantalla2();
-    nuevaInterfaz.setVisible(true);
-    this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void jTextField1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MousePressed
-        jTextField1.setText(" ");
-    jTextField1.setForeground(Color.BLACK);
-    
-    }//GEN-LAST:event_jTextField1MousePressed
+    private void CantidadMermaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CantidadMermaMousePressed
+        CantidadMerma.setText("");
+        CantidadMerma.setForeground(Color.BLACK);
+
+    }//GEN-LAST:event_CantidadMermaMousePressed
 
     /**
      * @param args the command line arguments
@@ -140,9 +162,9 @@ public class Merma extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CantidadMerma;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
